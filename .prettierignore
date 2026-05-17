@@ -1,5 +1,26 @@
 # Add files here to ignore them from prettier formatting
+
+# Build outputs
 /dist
 /coverage
+/out
+/tmp
+
+# Dependencies
+/node_modules
+
+# Nx cache
 /.nx/cache
 /.nx/workspace-data
+
+# Package manager
+/pnpm-lock.yaml
+
+# Logs
+*.log
+
+# Generated files
+*.tsbuildinfo
+
+# Electron artifacts
+/out

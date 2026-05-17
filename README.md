@@ -1,109 +1,91 @@
-# NxElectronForge
+# nx-electron-forge
 
-<a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
+[![Nx](https://img.shields.io/badge/Nx-Monorepo-143055?logo=nx&logoColor=white)](https://nx.dev)
+[![Electron](https://img.shields.io/badge/Electron-Forge-47848f?logo=electron&logoColor=white)](https://www.electronforge.io)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178c6?logo=typescript&logoColor=white)](https://www.typescriptlang.org)
+[![pnpm](https://img.shields.io/badge/pnpm-10.x-f69220?logo=pnpm&logoColor=white)](https://pnpm.io)
+[![License](https://img.shields.io/badge/license-MIT-green)](./LICENSE)
 
-✨ Your new, shiny [Nx workspace](https://nx.dev) is ready ✨.
+Nx-powered Electron Forge monorepo for high-performance IPC, tooling, and enterprise Electron architecture.
 
-[Learn more about this workspace setup and its capabilities](https://nx.dev/nx-api/js?utm_source=nx_project&amp;utm_medium=readme&amp;utm_campaign=nx_projects) or run `npx nx graph` to visually explore what was created. Now, let's get you up to speed!
+## 🚀 Overview
 
-## Generate a library
+`nx-electron-forge` is a monorepo focused on building a modern Electron development stack around:
 
-```sh
-npx nx g @nx/js:lib packages/pkg1 --publishable --importPath=@my-org/pkg1
-```
+- Nx workspace orchestration
+- Electron Forge integration
+- High-performance IPC architecture
+- Enterprise-grade Electron application framework
+- Plugin-based tooling and extensibility
 
-## Run tasks
+The goal is to provide a complete solution for Electron engineering, from low-level IPC to high-level application architecture.
 
-To build the library use:
+## ✨ Why
 
-```sh
-npx nx build pkg1
-```
+Electron projects often become difficult to scale when `main`, `preload`, and `renderer` evolve independently.
 
-To run any task with Nx use:
+This project aims to solve that by providing:
 
-```sh
-npx nx <target> <project-name>
-```
+- A structured IPC layer
+- A unified monorepo workflow with Nx
+- Tooling support for Electron Forge
+- A future enterprise application framework built on top of IPC
 
-These targets are either [inferred automatically](https://nx.dev/concepts/inferred-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) or defined in the `project.json` or `package.json` files.
+## 📦 Packages
 
-[More about running tasks in the docs &raquo;](https://nx.dev/features/run-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+### `@nx-electron-forge/ipc`
 
-## Versioning and releasing
+A high-performance IPC framework for Electron, inspired by Fastify-style architecture.
 
-To version and release the library use
+### `@nx-electron-forge/forge`
 
-```
-npx nx release
-```
+An Nx plugin for integrating Electron Forge into the workspace.
 
-Pass `--dry-run` to see what would happen without actually releasing the library.
+### `@nx-electron-forge/core`
 
-[Learn more about Nx release &raquo;](https://nx.dev/features/manage-releases?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+An enterprise-grade Electron framework built on top of `@nx-electron-forge/ipc`, inspired by NestJS-style architecture.
 
-## Keep TypeScript project references up to date
+## 🗺️ Project Roadmap
 
-Nx automatically updates TypeScript [project references](https://www.typescriptlang.org/docs/handbook/project-references.html) in `tsconfig.json` files to ensure they remain accurate based on your project dependencies (`import` or `require` statements). This sync is automatically done when running tasks such as `build` or `typecheck`, which require updated references to function correctly.
+### M1: IPC Foundation
 
-To manually trigger the process to sync the project graph dependencies information to the TypeScript project references, run the following command:
+- [ ] Complete `@nx-electron-forge/ipc`
+- [ ] Add unit tests for `main`, `preload`, and `renderer`
+- [ ] Publish `@nx-electron-forge/ipc`
+- [ ] Build `apps/docs` for IPC documentation
 
-```sh
-npx nx sync
-```
+### M2: Forge Tooling and Examples
 
-You can enforce that the TypeScript project references are always in the correct state when running in CI by adding a step to your CI job configuration that runs the following command:
+- [ ] Build `@nx-electron-forge/forge`
+- [ ] Create `apps/examples`
+- [ ] Integrate `@nx-electron-forge/ipc` with `@nx-electron-forge/forge`
+- [ ] Provide Nx generators and executors for Electron Forge workflows
 
-```sh
-npx nx sync:check
-```
+### M3: Enterprise Framework
 
-[Learn more about nx sync](https://nx.dev/reference/nx-commands#sync)
+- [ ] Build `@nx-electron-forge/core`
+- [ ] Design enterprise application architecture on top of IPC
+- [ ] Provide toolchain support through `@nx-electron-forge/forge`
+- [ ] Establish a complete framework, tooling, and examples ecosystem
 
-## Set up CI!
+## 📚 Documentation
 
-### Step 1
+Full documentation will be available in `apps/docs`.
 
-To connect to Nx Cloud, run the following command:
+## 🧪 Examples
 
-```sh
-npx nx connect
-```
+Runnable examples will be available in `apps/examples`, including integration examples for `@nx-electron-forge/ipc` and `@nx-electron-forge/forge`.
 
-Connecting to Nx Cloud ensures a [fast and scalable CI](https://nx.dev/ci/intro/why-nx-cloud?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) pipeline. It includes features such as:
+## 🔀 Development Workflow
 
-- [Remote caching](https://nx.dev/ci/features/remote-cache?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Task distribution across multiple machines](https://nx.dev/ci/features/distribute-task-execution?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Automated e2e test splitting](https://nx.dev/ci/features/split-e2e-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Task flakiness detection and rerunning](https://nx.dev/ci/features/flaky-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+This repository follows a GitHub-based workflow:
 
-### Step 2
+- Branch-based development
+- Pull request review and merge
+- Conventional commits
+- Workspace managed by Nx
+- Package management via pnpm
 
-Use the following command to configure a CI workflow for your workspace:
+## 📄 License
 
-```sh
-npx nx g ci-workflow
-```
-
-[Learn more about Nx on CI](https://nx.dev/ci/intro/ci-with-nx#ready-get-started-with-your-provider?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-## Install Nx Console
-
-Nx Console is an editor extension that enriches your developer experience. It lets you run tasks, generate code, and improves code autocompletion in your IDE. It is available for VSCode and IntelliJ.
-
-[Install Nx Console &raquo;](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-## Useful links
-
-Learn more:
-
-- [Learn more about this workspace setup](https://nx.dev/nx-api/js?utm_source=nx_project&amp;utm_medium=readme&amp;utm_campaign=nx_projects)
-- [Learn about Nx on CI](https://nx.dev/ci/intro/ci-with-nx?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Releasing Packages with Nx release](https://nx.dev/features/manage-releases?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [What are Nx plugins?](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-And join the Nx community:
-- [Discord](https://go.nx.dev/community)
-- [Follow us on X](https://twitter.com/nxdevtools) or [LinkedIn](https://www.linkedin.com/company/nrwl)
-- [Our Youtube channel](https://www.youtube.com/@nxdevtools)
-- [Our blog](https://nx.dev/blog?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+MIT

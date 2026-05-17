@@ -1,0 +1,36 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "useGitignore": true,
+  "words": [
+    "commitlint",
+    "commitizen",
+    "cspell",
+    "electron",
+    "eslint",
+    "forge",
+    "husky",
+    "ipc",
+    "lintstaged",
+    "monorepo",
+    "nx",
+    "pnpm",
+    "preload",
+    "renderer",
+    "swc",
+    "tslib"
+  ],
+  "ignorePaths": [
+    "node_modules",
+    "dist",
+    "coverage",
+    "out",
+    "tmp",
+    ".vscode",
+    ".nx/cache",
+    ".nx/workspace-data",
+    "pnpm-lock.yaml",
+    ".git",
+    "**/*.tsbuildinfo"
+  ]
+}
