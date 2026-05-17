@@ -135,8 +135,14 @@ pnpm format:check
 # write formatting changes
 pnpm format:write
 
+# run lint targets
+pnpm lint
+
 # run spellcheck
 pnpm spellcheck
+
+# run all repository checks
+pnpm check
 ```
 
 ## <a name="rules"></a> Coding Rules

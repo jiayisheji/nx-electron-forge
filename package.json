@@ -15,26 +15,50 @@
   "devDependencies": {
     "@commitlint/cli": "^19.3.0",
     "@commitlint/config-conventional": "^19.2.2",
+    "@eslint/js": "^9.8.0",
     "@nx/eslint": "^22.7.2",
-    "@nx/eslint-plugin": "^22.7.2",
+    "@nx/eslint-plugin": "22.7.2",
     "@nx/js": "22.7.2",
+    "@nx/vitest": "22.7.2",
     "@swc-node/register": "~1.11.1",
     "@swc/core": "~1.15.5",
     "@swc/helpers": "~0.5.18",
+    "@types/node": "20.19.9",
+    "@vitest/coverage-v8": "~4.1.0",
     "commitizen": "^4.3.0",
     "cspell": "^8.8.4",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "~9.8.0",
+    "eslint-config-prettier": "^10.0.0",
     "husky": "^9.0.11",
+    "jsonc-eslint-parser": "^2.1.0",
     "lint-staged": "^15.2.5",
     "nx": "22.7.2",
     "prettier": "~3.6.2",
     "tslib": "^2.3.0",
-    "typescript": "~5.9.2"
+    "typescript": "~5.9.2",
+    "typescript-eslint": "^8.40.0",
+    "verdaccio": "^6.3.2",
+    "vite": "^8.0.0",
+    "vitest": "~4.1.0"
   },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "dependencies": {},
+  "nx": {
+    "includedScripts": [],
+    "targets": {
+      "local-registry": {
+        "executor": "@nx/js:verdaccio",
+        "options": {
+          "port": 4873,
+          "config": ".verdaccio/config.yml",
+          "storage": "tmp/local-registry/storage"
+        }
+      }
     }
   }
 }
