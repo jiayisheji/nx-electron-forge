@@ -31,6 +31,7 @@
     ".nx/workspace-data",
     "pnpm-lock.yaml",
     ".git",
+    ".github",
     "**/*.tsbuildinfo",
     "*.yml"
   ]
